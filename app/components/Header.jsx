@@ -9,9 +9,11 @@ import {useAside} from '~/components/Aside';
 export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
-    <header className="header">
+    <header className="header" >
+      <div className="header-background flex max-w-6xl w-full" >
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        {/* <strong>{shop.name} Brazaiti</strong> */}
+        <strong>Brazaiti</strong>
       </NavLink>
       <HeaderMenu
         menu={menu}
@@ -20,6 +22,7 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
         publicStoreDomain={publicStoreDomain}
       />
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+      </div>
     </header>
   );
 }

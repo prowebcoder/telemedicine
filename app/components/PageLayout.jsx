@@ -29,6 +29,7 @@ export function PageLayout({
       {header && (
         <Header
           header={header}
+          className="max-w-6xl"
           cart={cart}
           isLoggedIn={isLoggedIn}
           publicStoreDomain={publicStoreDomain}
@@ -36,6 +37,7 @@ export function PageLayout({
       )}
       <main>{children}</main>
       <Footer
+      className="max-w-6xl"
         footer={footer}
         header={header}
         publicStoreDomain={publicStoreDomain}
