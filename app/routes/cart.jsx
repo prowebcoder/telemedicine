@@ -117,7 +117,7 @@ export default function Cart() {
 
   return (
     <div className="cart">
-      <h1>Cart</h1>
+     
       <CartMain layout="page" cart={cart} />
     </div>
   );
