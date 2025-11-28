@@ -1,7 +1,8 @@
-import {useLoaderData} from 'react-router';
-import {getPaginationVariables} from '@shopify/hydrogen';
-import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
-import {ProductItem} from '~/components/ProductItem';
+// src/routes/collections.all.jsx
+import {useLoaderData} from "react-router";
+import {getPaginationVariables} from "@shopify/hydrogen";
+import {PaginatedResourceSection} from "~/components/PaginatedResourceSection";
+import {ProductItem} from "~/components/ProductItem";
 
 /**
  * @type {Route.MetaFunction}
@@ -14,64 +15,86 @@ export const meta = () => {
  * @param {Route.LoaderArgs} args
  */
 export async function loader(args) {
-  // Start fetching non-critical data without blocking time to first byte
+  // keep deferred/critical pattern
   const deferredData = loadDeferredData(args);
-
-  // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
-
   return {...deferredData, ...criticalData};
 }
 
-/**
- * Load data necessary for rendering content above the fold. This is the critical data
- * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
- * @param {Route.LoaderArgs}
- */
 async function loadCriticalData({context, request}) {
   const {storefront} = context;
   const paginationVariables = getPaginationVariables(request, {
-    pageBy: 8,
+    pageBy: 24,
   });
 
   const [{products}] = await Promise.all([
     storefront.query(CATALOG_QUERY, {
       variables: {...paginationVariables},
     }),
-    // Add other queries here, so that they are loaded in parallel
   ]);
   return {products};
 }
 
-/**
- * Load data for rendering content below the fold. This data is deferred and will be
- * fetched after the initial page load. If it's unavailable, the page should still 200.
- * Make sure to not throw any errors here, as it will cause the page to 500.
- * @param {Route.LoaderArgs}
- */
 function loadDeferredData({context}) {
   return {};
 }
 
-export default function Collection() {
-  /** @type {LoaderReturnData} */
+export default function AllProductsPage() {
   const {products} = useLoaderData();
 
   return (
-    <div className="collection">
-      <h1>Products</h1>
+    <div className="collections-page max-w-[1200px] mx-auto px-4 py-8">
+      <div className="collections-header text-center mb-8">
+        <h1 className="text-3xl font-semibold">All Products</h1>
+
+        {/* Search Bar */}
+        <div className="mt-4 max-w-xl mx-auto">
+          <input
+            type="text"
+            name="q"
+            placeholder="Search product by name..."
+            className="w-full border rounded-full px-4 py-3"
+          />
+        </div>
+      </div>
+
       <PaginatedResourceSection
         connection={products}
-        resourcesClassName="products-grid"
+        resourcesClassName="products-grid grid gap-6 sm:grid-cols-2 md:grid-cols-3"
       >
         {({node: product, index}) => (
-          <ProductItem
-            key={product.id}
-            product={product}
-            loading={index < 8 ? 'eager' : undefined}
-          />
+          <ProductItem key={product.id} product={product} loading={index < 6 ? "eager" : undefined} />
         )}
       </PaginatedResourceSection>
+
+      {/* Testimonials */}
+      <section className="testimonials-section mt-12">
+        <h2 className="text-2xl text-center font-semibold mb-6">What others are saying</h2>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
+          <div className="testimonial-card p-6 border rounded">
+            <div className="avatar-circle w-10 h-10 rounded-full bg-gray-200 mb-3" />
+            <h3 className="font-semibold">Acne & Skin Clearing Gel</h3>
+            <p className="text-sm text-gray-700 mt-2">“I’ve tried everything for my skin, but this clearing gel actually works. My breakouts are finally under control, and my skin feels smoother too.”</p>
+            <strong className="block mt-3">— Emily R.</strong>
+          </div>
+
+          <div className="testimonial-card p-6 border rounded">
+            <div className="avatar-circle w-10 h-10 rounded-full bg-gray-200 mb-3" />
+            <h3 className="font-semibold">Immune Boost Multivitamin</h3>
+            <p className="text-sm text-gray-700 mt-2">“These gummies are actually amazing. I feel more energized, and I love that there’s no weird aftertaste like others I’ve tried.”</p>
+            <strong className="block mt-3">— Jasmine S.</strong>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="newsletter-section mt-12 text-center">
+        <h2 className="text-xl font-semibold">Healthy newsletter</h2>
+        <p className="text-sm text-gray-600">No spam. Just real health stuff.</p>
+        <div className="mt-4 max-w-md mx-auto">
+          <input placeholder="Enter your email" className="w-full border rounded-full px-4 py-3" />
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+// app/components/home/Goals.jsx
 "use client";
 import React, { useState } from "react";
 
@@ -23,7 +24,7 @@ export default function WeightGoalsForm() {
       </div>
 
       {/* Checkbox Options */}
-      <div className="space-y-4 mb-8 max-w-2xl mx-auto">
+      <div className="space-y-4 mb-8 w-100 mx-auto">
         {weightGoals.map((goal) => (
           <label
             key={goal.id}

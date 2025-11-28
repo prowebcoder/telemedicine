@@ -4,6 +4,11 @@ import {Image} from '@shopify/hydrogen';
 import {ProductItem} from '~/components/ProductItem';
 import HealthCategories from '~/components/home/HealthCategories';
 import WeightGoalsForm from '~/components/home/Goals';
+import VideoHero from '~/components/home/Videohero';
+import VideoStories from '~/components/home/VideoStories';
+import TopSellingProducts from '~/components/home/TopSellingProducts';
+import FaqSection from '~/components/home/FaqSection';
+import VideoSection from '~/components/VideoSection';
 
 /**
  * @type {Route.MetaFunction}
@@ -68,6 +73,20 @@ export default function Homepage() {
     <div className="home">
       <HealthCategories/>
       <WeightGoalsForm />
+     <VideoSection
+  title="Feel your best in 2025"
+  videoUrl="https://www.youtube.com/embed/VIDEO_ID"
+/>
+
+         <TopSellingProducts />
+     <VideoSection
+  title="Real stories. Real results."
+  videoUrl="https://www.youtube.com/embed/VIDEO_ID"
+/>
+
+   
+      <FaqSection/>
+
       {/* <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} /> */}
     </div>

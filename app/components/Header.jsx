@@ -3,12 +3,17 @@ import {Await, NavLink, useAsyncValue} from 'react-router';
 import {useAnalytics, useOptimisticCart} from '@shopify/hydrogen';
 import {useAside} from '~/components/Aside';
 
+import AnnouncementBar from './AnnouncementBar';
+
 /**
  * @param {HeaderProps}
  */
 export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
+    <>
+
+    <AnnouncementBar />
     <header className="header" >
       <div className="header-background flex max-w-6xl w-full" >
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
@@ -24,6 +29,7 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
       </div>
     </header>
+    </>
   );
 }
 

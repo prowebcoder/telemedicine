@@ -1,3 +1,4 @@
+// app/components/home/HealthCategories.jsx
 "use client";
 import React from "react";
 
