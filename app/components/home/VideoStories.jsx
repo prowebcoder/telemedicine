@@ -3,7 +3,7 @@ import React from "react";
 
 export default function VideoStories() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
+    <section className="max-w-7xl mx-auto px-6 py-16">
       <div className="w-full h-[420px] rounded-2xl bg-gradient-to-b from-gray-200 to-gray-300 flex flex-col justify-center items-center relative overflow-hidden">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
           Real stories. Real results.

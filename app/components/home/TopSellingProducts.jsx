@@ -68,7 +68,7 @@ export default function TopSellingProducts() {
   const [active, setActive] = useState(tabs[0]);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
+    <section className="max-w-7xl mx-auto px-6 py-20">
       <h2 className="text-center text-3xl md:text-4xl font-bold mb-10">
         Top Selling Products
       </h2>

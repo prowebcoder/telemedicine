@@ -476,7 +476,7 @@ function back(n) {
   /* ---------- the outer section MUST match your original exactly ---------- */
   return (
     <section
-      className="max-w-6xl mx-auto px-6 py-12 bg-white rounded-md mb-10"
+      className="max-w-7xl mx-auto px-6 py-12 bg-white rounded-md mb-10"
       style={{
         backgroundImage:
           "url(https://cdn.shopify.com/s/files/1/2333/8415/files/gugu.png?v=1763378009)",

@@ -15,7 +15,7 @@ export default function HealthCategories() {
   return (
     <section className="py-16 px-6 md:px-12 lg:px-24 text-left bg-white">
       {/* HEADER - Improved spacing and typography */}
-      <div className="max-w-6xl mx-auto mb-16">
+      <div className="max-w-7xl mx-auto mb-16">
         <div className="text-[40px] md:text-[44px] font-extrabold text-[#0b0b0b] leading-tight tracking-tight mb-4">
           Rewrite the rules. <br />
           <span className="font-extrabold">Own your health.</span>
@@ -26,7 +26,7 @@ export default function HealthCategories() {
       </div>
 
       {/* TOP 3 CARDS - Improved spacing and proportions */}
-      <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-6">
+      <div className="grid gap-6 md:grid-cols-3 max-w-7xl mx-auto mb-6">
         {categories.slice(0, 3).map((item, i) => (
           <div
             key={i}
@@ -49,7 +49,7 @@ export default function HealthCategories() {
       </div>
 
       {/* BOTTOM 3 SMALL CARDS - Improved alignment and spacing */}
-      <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+      <div className="grid gap-6 md:grid-cols-3 max-w-7xl mx-auto">
         {categories.slice(3).map((item, i) => (
           <div
             key={i}

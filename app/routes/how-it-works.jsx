@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
+    <div className="max-w-7xl mx-auto px-6 py-16">
 
       {/* Page Title */}
       <h1 className="text-4xl font-bold mb-10">How it works</h1>

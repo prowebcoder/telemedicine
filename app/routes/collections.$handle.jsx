@@ -63,7 +63,7 @@ export default function Collection() {
   const {collection} = useLoaderData();
 
   return (
-    <div className="collections-page max-w-[1200px] mx-auto px-4 py-10">
+    <div className=" max-w-7xl mx-auto px-4 py-8 mx-auto ">
 
       {/* PAGE TITLE */}
       <div className="collections-header text-center mb-10">
@@ -105,7 +105,7 @@ export default function Collection() {
           What others are saying
         </h2>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
 
           {/* Testimonial 1 */}
           <div className="testimonial-card p-6 border rounded-xl bg-white shadow-sm">

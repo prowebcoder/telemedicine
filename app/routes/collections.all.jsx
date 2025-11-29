@@ -43,7 +43,7 @@ export default function AllProductsPage() {
   const {products} = useLoaderData();
 
   return (
-    <div className="collections-page max-w-[1200px] mx-auto px-4 py-8">
+    <div className="collections-page max-w-7xl mx-auto px-4 py-8">
       <div className="collections-header text-center mb-8">
         <h1 className="text-3xl font-semibold">All Products</h1>
 
@@ -70,7 +70,7 @@ export default function AllProductsPage() {
       {/* Testimonials */}
       <section className="testimonials-section mt-12">
         <h2 className="text-2xl text-center font-semibold mb-6">What others are saying</h2>
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-4">
           <div className="testimonial-card p-6 border rounded">
             <div className="avatar-circle w-10 h-10 rounded-full bg-gray-200 mb-3" />
             <h3 className="font-semibold">Acne & Skin Clearing Gel</h3>

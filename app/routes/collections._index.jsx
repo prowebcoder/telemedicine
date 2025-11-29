@@ -37,7 +37,7 @@ export default function Collections() {
   const {collections} = useLoaderData();
 
   return (
-    <div className="collections-page">
+    <div className=" max-w-7xl mx-auto px-4 py-8">
       {/* Header Section */}
       <div className="collections-header">
         <h1>Browse products available without consultation</h1>
