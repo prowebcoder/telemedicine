@@ -1,6 +1,7 @@
 // app/routes/how-it-works.jsx
 "use client";
 import React from "react";
+import FaqSection from "~/components/home/FaqSection";
 
 export default function HowItWorksPage() {
   const posts = [
@@ -44,7 +45,22 @@ export default function HowItWorksPage() {
       </div>
 
       {/* Bottom CTA */}
+      <div className="bg-[#071026] text-white py-16 rounded-lg text-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
+          Ready to put your health first?
+        </h2>
+        <p className="mb-6 text-sm opacity-80">
+          No insurance required
+        </p>
+        <a
+          href="/consultation"
+          className="border border-white px-8 py-3 rounded-full inline-block"
+        >
+          Begin Consultation
+        </a>
+      </div>
 
+    
     </div>
   );
 }
