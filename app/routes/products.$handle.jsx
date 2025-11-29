@@ -182,13 +182,13 @@ export default function Product() {
   <div className="mt-4 flex items-start gap-3">
 
     {/* FIRST 3 THUMBNAILS */}
-    <div className="flex gap-3">
+    <div className="flex gap-2">
       {thumbnails.slice(0, 3).map((m, idx) => {
         const url = m.previewImage?.url ?? m.image?.url;
         return (
           <div
             key={`static-${m.id ?? idx}`}
-            className="w-20 h-20 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
+            className="w-45 h-45 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
           >
             {url ? (
               <img
@@ -213,7 +213,7 @@ export default function Product() {
             return (
               <div
                 key={`slider-${m.id ?? idx}`}
-                className="w-20 h-20 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
+                className="w-45 h-45 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
               >
                 {url ? (
                   <img
@@ -262,11 +262,11 @@ export default function Product() {
           </div>
 
           {/* Actions: Buy Now (primary pill) and Add To Cart (outlined with cart icon) */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row gap-2 mb-6">
             <button
               onClick={() => handleBuyNow(selectedVariant?.id)}
               disabled={!selectedVariant}
-              className="w-full sm:w-auto flex-1 px-8 py-4 rounded-full bg-black text-white font-semibold text-center"
+              className="w-100 px-8 py-4 rounded-full bg-black text-white font-semibold text-center"
             >
               Buy Now
             </button>
@@ -283,10 +283,11 @@ export default function Product() {
                   : []
               }
               disabled={!selectedVariant}
+            
               onClick={() => open('cart')}
             >
               {/* styled content inside AddToCartButton */}
-              <div className="w-full flex items-center justify-center gap-3 px-6 py-3 rounded-full border border-gray-300 bg-white text-black">
+              <div className="w-75 flex items-center justify-center gap-3 px-6 py-3 rounded-full border border-gray-300 bg-white text-black">
                 {/* Cart SVG icon */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   <circle cx="9" cy="20" r="1" />

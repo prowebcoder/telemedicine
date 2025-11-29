@@ -17,7 +17,7 @@ export function AddToCartButton({
   onClick,
 }) {
   return (
-    <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
+    <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}  className="w-75 sm:w-auto flex-1">
       {(fetcher) => (
         <>
           <input
