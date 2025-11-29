@@ -17,8 +17,8 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
     <header className="header" >
       <div className="header-background flex max-w-6xl w-full" >
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        {/* <strong>{shop.name} Brazaiti</strong> */}
-        <strong>Brazaiti</strong>
+        <strong>{shop.name}</strong>
+       
       </NavLink>
       <HeaderMenu
         menu={menu}
@@ -63,7 +63,7 @@ export function HeaderMenu({
           Home
         </NavLink>
       )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      {(menu).items.map((item) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
@@ -110,7 +110,31 @@ function HeaderCtas({isLoggedIn, cart}) {
     </nav>
   );
 }
-
+const HEADER_MENU_QUERY = `#graphql
+  query HeaderMenu {
+    shop {
+      name
+      primaryDomain {
+        url
+      }
+    }
+    menu(handle: "main-menu") {
+      id
+      items {
+        id
+        title
+        url
+        type
+        items {
+          id
+          title
+          url
+          type
+        }
+      }
+    }
+  }
+`;
 function HeaderMenuMobileToggle() {
   const {open} = useAside();
   return (
@@ -177,47 +201,6 @@ function CartBanner() {
   return <CartBadge count={cart?.totalQuantity ?? 0} />;
 }
 
-const FALLBACK_HEADER_MENU = {
-  id: 'gid://shopify/Menu/199655587896',
-  items: [
-    {
-      id: 'gid://shopify/MenuItem/461609500728',
-      resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609533496',
-      resourceId: null,
-      tags: [],
-      title: 'Blog',
-      type: 'HTTP',
-      url: '/blogs/journal',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609566264',
-      resourceId: null,
-      tags: [],
-      title: 'Policies',
-      type: 'HTTP',
-      url: '/policies',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609599032',
-      resourceId: 'gid://shopify/Page/92591030328',
-      tags: [],
-      title: 'About',
-      type: 'PAGE',
-      url: '/pages/about',
-      items: [],
-    },
-  ],
-};
 
 /**
  * @param {{
