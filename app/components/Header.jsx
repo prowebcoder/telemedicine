@@ -15,7 +15,7 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
 
     <AnnouncementBar />
     <header className="header" >
-      <div className="header-background flex max-w-6xl w-full" >
+      <div className="header-background flex max-w-7xl w-full" >
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <strong>{shop.name}</strong>
        
