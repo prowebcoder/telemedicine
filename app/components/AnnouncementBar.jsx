@@ -94,7 +94,7 @@ const features = [
 export default function AnnouncementBar() {
   return (
     <div className="bg-black border-b border-gray-200 py-1 ">
-         <div className="py-0 max-w-6xl w-full mx-auto">
+         <div className="py-0 max-w-7xl w-full mx-auto">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           {/* Left side - "Why Brazaiti?" */}
