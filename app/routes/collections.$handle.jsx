@@ -70,7 +70,7 @@ export default function Collection() {
         <h1 className="text-3xl font-semibold">{collection.title}</h1>
 
         {collection?.description && (
-          <p className="text-gray-600 max-w-2xl mx-auto mt-2">
+          <p className="text-gray-600  mx-auto mt-2 text-center">
             {collection.description}
           </p>
         )}
@@ -79,6 +79,7 @@ export default function Collection() {
         <div className="mt-6 max-w-xl mx-auto">
           <input
             type="text"
+              style={{borderRadius:"50px"}}
             placeholder="Search product by name..."
             className="w-full border rounded-full px-5 py-3"
           />
@@ -143,7 +144,8 @@ export default function Collection() {
         <div className="mt-5 max-w-md mx-auto">
           <input
             placeholder="Enter your email"
-            className="w-full border rounded-full px-5 py-3"
+            style={{borderRadius:"50px"}}
+            className="w-full border rounded-full important px-8 py-3"
           />
         </div>
       </section>

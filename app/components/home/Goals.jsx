@@ -31,18 +31,18 @@ function saveKey(k, v) {
 
 /* ---------- UI primitives (match your look) ---------- */
 const Title = ({children}) => (
-  <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight text-center">
+  <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight text-center">
     {children}
-  </h1>
+  </div>
 );
 const Subtitle = ({children}) => (
-  <p className="text-lg text-gray-600 font-medium text-center mb-8">{children}</p>
+  <div className="text-lg text-gray-600 font-medium text-center mb-4">{children}</div>
 );
 const ContinueButton = ({disabled, onClick}) => (
   <button
     onClick={onClick}
     disabled={disabled}
-    className={`w-full py-4 px-6 rounded-lg text-lg font-semibold transition-all duration-200 ${
+    className={`w-full mt-4 py-4 px-6 rounded-lg text-lg font-semibold transition-all duration-200 ${
       disabled
         ? "bg-gray-200 text-gray-500 cursor-not-allowed"
         : "bg-purple-600 hover:bg-purple-700 text-white shadow-md"
@@ -239,7 +239,7 @@ function S7({go, back}) {
           <div className="w-16 h-16 bg-gray-100 rounded-md" />
           <div>
             <h3 className="font-semibold">Ozempic® (Semaglutide) Treatment Plan</h3>
-            <p className="text-sm text-gray-600 mt-1">A once-weekly GLP-1 medication that helps control appetite, reduce cravings, and support long-term weight management.</p>
+            <div className="text-sm text-gray-600 mt-1">A once-weekly GLP-1 medication that helps control appetite, reduce cravings, and support long-term weight management.</div>
           </div>
         </div>
       </div>
@@ -353,7 +353,7 @@ function S10({go, back}) {
       <Subtitle>Please review and accept our telehealth consent and privacy policy.</Subtitle>
 
       <div className="mb-8 text-sm text-gray-700">
-        <p className="mb-4">By clicking Continue you accept our Terms & Telehealth Consent and Privacy Policy.</p>
+        <div className="mb-4">By clicking Continue you accept our Terms & Telehealth Consent and Privacy Policy.</div>
         <label className="inline-flex items-center gap-2">
           <input type="checkbox" checked={accepted} onChange={(e)=>setAccepted(e.target.checked)} />
           <span>I agree</span>

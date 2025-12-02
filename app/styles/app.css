@@ -629,3 +629,7 @@ button.reset:hover:not(:has(> *)) {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
+a.header-cart-toggle {
+    display: flex;
+    gap:5px
+}
