@@ -45,7 +45,7 @@ export function ProductItem({ product, loading }) {
   const firstCollection = product?.collections?.nodes?.[0]?.title;
 
   return (
-    <div className="product-card border rounded-2xl overflow-hidden">
+    <div className="product-card border border-gray-300 rounded-2xl overflow-hidden">
       <Link to={`/products/${product.handle}`} prefetch="intent" className="product-link block h-full">
         <div className="product-image-container w-full aspect-[1/1] bg-gray-100 overflow-hidden">
           {image ? (

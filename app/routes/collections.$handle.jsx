@@ -81,7 +81,7 @@ export default function Collection() {
             type="text"
               style={{borderRadius:"50px"}}
             placeholder="Search product by name..."
-            className="w-full border rounded-full px-5 py-3"
+            className="w-full border border-gray-300 rounded-full px-5 py-3"
           />
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function Collection() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
 
           {/* Testimonial 1 */}
-          <div className="testimonial-card p-6 border rounded-xl bg-white shadow-sm">
+          <div className="testimonial-card p-6 border border-gray-300 rounded-xl bg-white shadow-sm">
             <div className="avatar-circle w-12 h-12 rounded-full bg-gray-200 mb-3" />
             <h3 className="font-semibold text-lg">Acne & Skin Clearing Gel</h3>
             <p className="text-sm text-gray-700 mt-2 leading-relaxed">
@@ -121,7 +121,7 @@ export default function Collection() {
           </div>
 
           {/* Testimonial 2 */}
-          <div className="testimonial-card p-6 border rounded-xl bg-white shadow-sm">
+          <div className="testimonial-card p-6 border border-gray-300 rounded-xl bg-white shadow-sm">
             <div className="avatar-circle w-12 h-12 rounded-full bg-gray-200 mb-3" />
             <h3 className="font-semibold text-lg">Immune Boost Multivitamin</h3>
             <p className="text-sm text-gray-700 mt-2 leading-relaxed">
@@ -145,7 +145,7 @@ export default function Collection() {
           <input
             placeholder="Enter your email"
             style={{borderRadius:"50px"}}
-            className="w-full border rounded-full important px-8 py-3"
+            className="w-full border border-gray-300 rounded-full important px-8 py-3"
           />
         </div>
       </section>

@@ -249,7 +249,7 @@ export default function Product() {
 
           {/* Bottle size / options */}
           <div className="mb-4">
-            <h4 className="text-sm font-medium mb-2">Bottle size</h4>
+          
             <ProductForm productOptions={productOptions} selectedVariant={selectedVariant} />
           </div>
 

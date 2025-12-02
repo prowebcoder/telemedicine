@@ -97,7 +97,7 @@ export default function TopSellingProducts() {
           .map((p, i) => (
             <div
               key={i}
-              className="border rounded-2xl p-6 bg-white shadow-sm hover:shadow-lg transition-all"
+              className="border border-gray-300 rounded-2xl p-6 bg-white shadow-sm hover:shadow-lg transition-all"
             >
               <div className="w-full h-52 bg-gray-200 rounded-xl mb-4"></div>
 
