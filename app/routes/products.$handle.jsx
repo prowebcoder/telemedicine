@@ -157,7 +157,7 @@ export default function Product() {
     .slice(0, 5);
 
   return (
-    <div className="product-page-wrapper max-w-[1200px] mx-auto px-6 py-10">
+    <div className="product-page-wrapper max-w-7xl mx-auto  py-10">
 
       {/* TITLE + CATEGORY (moved above grid to match PDF) */}
       <div className="mb-6">
@@ -188,7 +188,7 @@ export default function Product() {
         return (
           <div
             key={`static-${m.id ?? idx}`}
-            className="w-45 h-45 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
+            className="w-50 h-50 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
           >
             {url ? (
               <img
@@ -213,7 +213,7 @@ export default function Product() {
             return (
               <div
                 key={`slider-${m.id ?? idx}`}
-                className="w-45 h-45 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
+                className="w-50 h-50 rounded-md overflow-hidden bg-gray-200 flex-shrink-0"
               >
                 {url ? (
                   <img
